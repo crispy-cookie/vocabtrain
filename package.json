@@ -52,5 +52,9 @@
   "bugs": {
     "url": "https://github.com/CC044/expressJsTemplate/issues"
   },
-  "homepage": "https://github.com/CC044/expressJsTemplate#readme"
+  "homepage": "https://github.com/CC044/expressJsTemplate#readme",
+  "engines": {
+    "node": ">=16"
+  }
+  "private": "true"
 }

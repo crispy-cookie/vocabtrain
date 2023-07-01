@@ -55,6 +55,6 @@
   "homepage": "https://github.com/CC044/expressJsTemplate#readme",
   "engines": {
     "node": ">=16"
-  }
+  },
   "private": "true"
 }

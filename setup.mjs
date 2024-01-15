@@ -1,4 +1,5 @@
-'use strict';
+#! /usr/bin/env node
+'use_strict';
 
 import express from 'express';
 import path from 'path';

@@ -1,11 +1,21 @@
+#! /usr/bin/env node
+'use_strict';
 import express from 'express';
 const router = express.Router();
+
+import path from 'path';
+/* Fix __dirname in ES6 */
+/*import {fileURLToPath} from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);*/
+
 // const app = express();
 // app.use(express.static(staticPath));
 
 // const staticPath = path.join(path.dirname(process.argv[1]), path.join('client', 'dist'));
 
-const staticPath = '../../client/src'; //path.join(path.dirname(process.argv[1]), path.join('client', 'src'));
+// const staticPath = '../../client/src'; 
+const staticPath = path.join(path.dirname(process.argv[1]), path.join('client', 'src'));
 
 /*router.get('/hello', (req, res) => {
   res.send('Hello World!');
@@ -31,10 +41,10 @@ router.get('/datenschutz', (req, res) => {
   res.sendFile(staticPath + '/datenschutz.html');
 });
 
-app.get('/w', (req, res) => {
+router.get('/w', (req, res) => {
   res.render('main', {layout : 'index'});
 });
-app.get('/nn', (req, res) => {
+router.get('/nn', (req, res) => {
   res.render('main');
 });
 

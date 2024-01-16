@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ExampleApp</title>
     <link href="css/normalize.min.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link href="css/cutegrids.min.css" rel="stylesheet" type="text/css" media="screen"/>
+    <!-- <link href="css/tailwind.min.css" rel="stylesheet" type="text/css" media="screen"/> -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="screen"/>
     <link rel="alternate icon" type="image/svg" href="img/home.svg">
     <link rel="manifest" href="manifest.json">
@@ -14,6 +14,13 @@
   </head>
   <body>
     <style>
+      body {
+        background-color: #000;
+        color: #fff;
+      }
+      a {
+        color: #00ffff;
+      }
       img {
         height: 5vw;
         min-height: 30px;
@@ -29,14 +36,62 @@
     </nav>
     <main>
       <img src="img/home.svg" alt="Placeholder" loading="lazy" />
-      <form method="POST" action="" id="" autocomplete="on">
-        <label for="" id=""></label>
-        <input type="" id="" name="" value="" placeholder="" autocapitalize="on" />
-        <button type="button" id="" name="" title=""></button>
+      <form method="POST" action="" id="formTest" autocomplete="on">
+        <label for="test" id=""></label>
+        <input type="text" id="inpTest" name="inpTest" value="" placeholder="Input Test" autocapitalize="on" />
+        <button type="button" id="btnTest" name="btnTest" title="Daten senden">Senden</button>
       </form>
     </main>
+    <script> defer >
+      'use_strict';
+      function storageAvailable(type) {
+        let storage;
+        try {
+          storage = window[type];
+          const x = "__storage_test__";
+          storage.setItem(x, x);
+          storage.removeItem(x);
+          return true;
+        } catch (e) {
+          return (
+            e instanceof DOMException &&
+            // everything except Firefox
+            (e.code === 22 ||
+              // Firefox
+              e.code === 1014 ||
+              // test name field too, because code might not be present
+              // everything except Firefox
+              e.name === "QuotaExceededError" ||
+              // Firefox
+              e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            storage &&
+            storage.length !== 0
+          );
+        }
+      }
+      storageAvailable(localStorage) ? console.log("localStorage is available") : console.log("localStorage is not available");
+    </script>
     <script defer >
       'use_strict';
+      const inpTest = document.getElementById('inpTest').value;
+      const btnTest = document.getElementById('btnTest').addEventListner('click', main();
+      if (!storageAvailable("localStorage")) {
+        // Too bad, no localStorage for us
+          throw new Error("localStorage is not available");
+        // Show Error Modal Here
+        return
+      }
+      async function main {
+        if (!localStorage.getItem("inpTest")) {
+          localStorage.setItem("inpTest", inpTest);
+        }
+        localStorage.setItem("myCat", "Tom");
+        const cat = localStorage.getItem("myCat");
+        console.log(`Cat is ${cat}`);
+        localStorage.removeItem("myCat");
+        // localStorage.clear();
+      }
     </script>
   </body>
 </html>

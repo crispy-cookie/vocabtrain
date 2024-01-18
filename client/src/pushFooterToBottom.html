@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test Footer</title>
+    <link href="css/normalize.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- <link href="css/tailwind.min.css" rel="stylesheet" type="text/css" media="screen"/> -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="alternate icon" type="image/svg" href="img/home.svg" />
+    <link rel="manifest" href="app.webmanifest" />
+    <meta name="robots" content="nofollow" />
+    <meta name="description" content="Beschreibung der Seite" />
+  </head>
+  <body>
+    <style>
+      /* Browseruebergreifende, konsistente Positionierung */
+      html {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+
+        /* Footer ans Seitenende druecken */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      footer {
+        margin-top: auto;
+        /*border: 1px solid blue;*/
+      }
+
+      /* Anzeige verschoenern, für footer irrelevant */
+      main,
+      footer {
+        padding: 15px;
+      }
+      @media (prefers-color-scheme: dark) {
+        body,
+        main {
+          background-color: #111;
+          color: #fff;
+        }
+        a {
+          text-decoration: underline solid currentColor 2px;
+          color: #00ffff;
+        }
+      }
+      img {
+        height: 5vw;
+        min-height: 30px;
+        max-height: 80px;
+        width: auto;
+      }
+    </style>
+    <main>
+      <p>
+        Main-Content: <br />
+        Est veniam tempora fugiat perferendis. Minima maiores id fugit ut
+        consequatur. Explicabo cumque laborum dicta officia quia. Dolore
+        adipisci nemo qui consequatur modi ut illum. Rem aut quae minima id in
+        iste rerum itaque. Ut maxime est nobis facilis optio. Illo fugit
+        molestiae ab tempore et dolorem minima. Amet expedita quaerat nulla.
+        Ipsam sed itaque molestias qui. Quasi totam impedit atque qui. Nostrum
+        veritatis maiores nostrum corrupti aut consequatur soluta. Quod iste
+        voluptatibus odio. Et sed sed ipsum corrupti aut voluptatum. Fugiat
+        molestiae aut provident error aut. Ut rerum at repudiandae hic eius odio
+        tempora. Adipisci omnis nulla explicabo aut aliquid quia nihil. Minus
+        numquam ratione sed possimus.
+      </p>
+    </main>
+    <footer>
+      <p>
+        Footer-Content: <br />
+        Totam distinctio ex voluptatem aspernatur. Tempore vel qui sunt ut. Ut
+        et deleniti dolorem autem voluptatem enim. Hic ratione nam vel et et.
+        Perspiciatis possimus eaque fugit corrupti.
+      </p>
+    </footer>
+  </body>
+</html>

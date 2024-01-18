@@ -39,6 +39,7 @@
       <form id="formTest" autocomplete="on">
         <label for="test" id=""></label>
         <input type="text" id="inpTest" name="inpTest" placeholder="Input Test" autocapitalize="on" />
+        <input type="text" id="inpTest" name="inpTest1" placeholder="Input Test" autocapitalize="on" />
         <button type="button" id="btnTest" name="btnTest" title="Daten senden">Senden</button>
       </form>
     </main>
@@ -49,46 +50,12 @@
       btnTest.addEventListener('click', async () => {
         const formTest = document.getElementById('formTest');
         let formData = new FormData(formTest);
-        //console.log(formData);
-        main(formData);
+        console.log(formData);
+          writeToDb(formData);
       });
       
-      /*
-      // craft body response:
-      const dataToSend = {
-        key1: 'value1',
-        key2: 'value2'
-      };
-      const bodyData = JSON.stringify(dataToSend);
-      [code...]
-      body: bodyData
-      */
-      async function main (dataToSend) {
-        
-        const hardDataToSend = {
-            key1: 'value1',
-            key2: 'value2'
-        };
-        
-        fetch('api/data', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: new URLSearchParams(dataToSend)
-        })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Netzwerkfehler');
-          }
-          return response.json();
-        })
-        .then(data => {
-          console.log('Erfolgreich gesendet:', data);
-        })
-        .catch(error => {
-          console.error('Fehler beim Senden der Daten:', error);
-        });
+      async function writeToDb (dataToSend) {
+        console.log('reached main');
       }
     </script>
   </body>

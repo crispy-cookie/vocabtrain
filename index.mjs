@@ -21,6 +21,11 @@ app.engine('.html', engine({ extname: '.html' }));
 app.set('view engine', '.html');
 app.set('views', './server/views');
 
+// Middleware für das Parsen des Anfragekörpers als JSON
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true }));
+
+
 app.use(express.static(path.join(path.dirname(process.argv[1]), path.join('client', 'src'))));
 app.use(routes);
 

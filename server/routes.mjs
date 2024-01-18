@@ -9,7 +9,10 @@ import path from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);*/
 
-// const app = express();
+/*const app = express();
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true }));*/
+
 // app.use(express.static(staticPath));
 
 // const staticPath = path.join(path.dirname(process.argv[1]), path.join('client', 'dist'));
@@ -21,13 +24,21 @@ const staticPath = path.join(path.dirname(process.argv[1]), path.join('client', 
   res.send('Hello World!');
 });*/
 
-router.get('/', (req, res) => {
+// Gemeinsame Callback-Funktion für verschiedene Pfade
+const commonHandler = (req, res) => {
+  // Verarbeite die Anfrage hier
+  res.sendFile(staticPath + '/index.html');
+};
+// Definiere die verschiedenen Pfade
+router.get(['/', '/index', '/index.html', '/index.php', '/start'], commonHandler);
+
+/*router.get('/', (req, res) => {
   res.sendFile(staticPath + '/index.html');
 });
 
 router.get('/index', (req, res) => {
   res.sendFile(staticPath + '/index.html');
-});
+});*/
 
 router.get('/kontakt', (req, res) => {
   res.sendFile(staticPath + '/index.html');
@@ -46,6 +57,21 @@ router.get('/w', (req, res) => {
 });
 router.get('/nn', (req, res) => {
   res.render('main');
+});
+router.get('/dbcom', (req, res) => {
+  res.sendFile(staticPath + '/dbcom.html');
+});
+
+router.post('/api/data', (req, res) => {
+  const receivedData = req.body;
+  // console.log(req);
+  console.log('Daten empfangen:');
+  console.log(receivedData);
+  if (!receivedData) {
+    res.sendStatus(500);
+  } else {
+    res.json({ message: 'Daten empfangen und verarbeitet.' });
+  }
 });
 
 /*

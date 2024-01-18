@@ -12,8 +12,8 @@ const port = parseInt(process.argv[2]) ? parseInt(process.argv[2]) : 8080;
 const staticPath = path.join(path.dirname(process.argv[1]), path.join('client', 'src'));
 app.use(express.static(staticPath));
 
-//app.use(express.json()) // for parsing application/json
-//app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded and parsing incoming requests with URL-encoded payloads
+//app.use(express.json()); // for parsing application/json
+//app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded and parsing incoming requests with URL-encoded payloads
 
 import routes from './server/routes.mjs';
 app.use('/', routes);

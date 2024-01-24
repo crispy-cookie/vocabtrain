@@ -20,49 +20,52 @@ app.use(express.urlencoded({ extended: true }));*/
 // const staticPath = '../../client/src'; 
 const staticPath = path.join(path.dirname(process.argv[1]), path.join('client', 'src'));
 
-/*router.get('/hello', (req, res) => {
+/*router.get('/hello', async (req, res) => {
   res.send('Hello World!');
 });*/
 
 // Gemeinsame Callback-Funktion für verschiedene Pfade
-const commonHandler = (req, res) => {
+const commonHandler = async (req, res) => {
   // Verarbeite die Anfrage hier
   res.sendFile(staticPath + '/index.html');
 };
 // Definiere die verschiedenen Pfade
 router.get(['/', '/index', '/index.html', '/index.php', '/start'], commonHandler);
 
-/*router.get('/', (req, res) => {
+/*router.get('/', async (req, res) => {
   res.sendFile(staticPath + '/index.html');
 });
 
-router.get('/index', (req, res) => {
+router.get('/index', async (req, res) => {
   res.sendFile(staticPath + '/index.html');
 });*/
 
-router.get('/kontakt', (req, res) => {
+router.get('/kontakt', async (req, res) => {
   res.sendFile(staticPath + '/index.html');
 });
 
-router.get('/impressum', (req, res) => {
+router.get('/impressum', async (req, res) => {
   res.sendFile(staticPath + '/impressum.html');
 });
 
-router.get('/datenschutz', (req, res) => {
+router.get('/datenschutz', async (req, res) => {
   res.sendFile(staticPath + '/datenschutz.html');
 });
 
-router.get('/w', (req, res) => {
+router.get('/w', async (req, res) => {
   res.render('main', {layout : 'index'});
 });
-router.get('/nn', (req, res) => {
+router.get('/nn', async (req, res) => {
   res.render('main');
 });
-router.get('/dbcom', (req, res) => {
+router.get('/dbcom', async (req, res) => {
   res.sendFile(staticPath + '/dbcom.html');
 });
+router.get('/memory', async (req, res) => {
+  res.render('memory', {layout : 'memoryHeader'});
+});
 
-router.post('/api/data', (req, res) => {
+router.post('/api/data', async (req, res) => {
   const receivedData = req.body;
   // console.log(req);
   console.log('Daten empfangen:');
@@ -94,7 +97,7 @@ router.get('/guestlist', async (req,res)=>{
 });
 */
 /*
-router.post('/shorten', async (req, res) => {
+router.post('/shorten', async async (req, res) => {
   const longUrl = req.body.longUrl;
   const timestamp = new Date();
   const randomValue = generateRandomValue();

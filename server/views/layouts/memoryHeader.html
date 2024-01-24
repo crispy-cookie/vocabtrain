@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ExampleApp</title>
+    <title>VocabTrainEr</title>
     <link href="css/normalize.min.css" rel="stylesheet" type="text/css" media="screen"/>
-    <!-- <link href="css/tailwind.min.css" rel="stylesheet" type="text/css" media="screen"/> -->
+    <link href="css/glider.min.css" rel="stylesheet" type="text/css" media="screen"/>
+    <!--<link href="css/framework7-bundle.min.css" rel="stylesheet" type="text/css" media="screen"/>-->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link rel="alternate icon" type="image/svg" href="img/home.svg">
+    <link rel="alternate icon" type="image/svg" href="img/metro.svg">
     <link rel="manifest" href="app.webmanifest">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
@@ -18,10 +19,24 @@
     <noscript>
       <br />
       <a href="https://ddg.gg/Javascript%20aktivieren?k1=-1&kz=1" target="_blank" rel="noreferrer noopener">Javascript ist deaktiviert</a>. Einige Funktionen sind nicht verfügbar!<br />
+      <a href="https://ddg.gg/Javascript%20aktivieren?k1=-1&kz=1" target="_blank" rel="noreferrer noopener">Javascript aktivieren</a>
+      <style>
+        nav, main, footer {
+          display: none !important;
+        }
+      </style>
     </noscript>
     <style>
+      body {
+        background-color: #000;
+        color: #fff;
+      }
+      main {
+        margin: 0px;
+        padding: 0px;
+      }
       img {
-        height: 5vw;
+        height: auto;
         min-height: 30px;
         max-height: 80px;
         width: auto
@@ -36,7 +51,7 @@
         justify-content: end; /* nur 1 link (rechts) vorhanden */
         margin: 0;
         padding: 0;
-        
+
       }
     </style>
     <nav>
@@ -45,10 +60,12 @@
         <li><button type="button" id="settings">⚙️Einstellungen</button></li>
       </ul>
     </nav>
-    <main>
-      <img src="img/home.svg" alt="Placeholder" loading="lazy" />
-    </main>
-    <script defer>
+    <!--<main>-->
+      {{{ body }}}
+    <!--</main>-->
+    <script src="scripts/glider-compat.min.js" defer></script>
+    <script src="scripts/glider.min.js" defer></script>
+    <script defer >
       /*// Offline Functionality
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
@@ -65,4 +82,3 @@
     </script>
   </body>
 </html>
-

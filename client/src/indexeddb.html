@@ -46,12 +46,19 @@
     <script defer >
       'use_strict';
       const btnTest = document.getElementById('btnTest');
+      const formTest = document.getElementById('formTest');
       
       btnTest.addEventListener('click', async () => {
-        const formTest = document.getElementById('formTest');
         let formData = new FormData(formTest);
-        console.log(formData);
-          writeToDb(formData);
+        
+        // Convert FormData to plain object
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+          formDataObject[key] = value;
+        });
+        
+        console.log(formDataObject);
+        // writeToDb(formData);
       });
       
       async function writeToDb (dataToSend) {

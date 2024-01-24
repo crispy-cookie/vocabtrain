@@ -28,6 +28,11 @@ body{
 /* a:link, a:visited, a:focus, a:hover, a:active */
 .btn
 
+p {
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
 header
 ul
 nav

@@ -1,0 +1,125 @@
+<main>
+  <div class="glider-contain">
+    <div class="glider">
+      <!--<div class="card">Anmerkungen</div>-->
+      <div class="card"><p>Vokabel</p></div>
+      <div class="card"><p>Vocabulary</p></div>
+    </div>
+  
+    <button aria-label="Previous" class="glider-prev">«</button>
+    <button aria-label="Next" class="glider-next">»</button>
+    <!--<button aria-label="Previous" class="glider-prev">&#11104</button>
+    <button aria-label="Next" class="glider-next">&#11106</button>-->
+    <div role="tablist" class="dots"></div>
+  </div>
+  <details class="anmerkungen" id="" open="true">
+    <div class="details-content">
+      <summary>Anmerkungen</summary>
+      <img src="img/lichtenstein.jpg" />
+      <p>
+        Anmerkungen
+  
+        Perspiciatis non accusamus repellendus et. Modi at enim accusantium minima voluptas maiores. Eos qui dolores repudiandae quibusdam non reprehenderit est laudantium. Ducimus sint quis consequatur. Molestias explicabo repellendus odit. Repudiandae ut reiciendis rerum.
+  
+        Vero dolor dolorem maiores. Quibusdam repellendus aspernatur iusto qui nobis. Enim rerum quia quam exercitationem deserunt tempore. Ad nam repudiandae et aut rem enim voluptatem. Perferendis minus tenetur unde et soluta laudantium. Quibusdam illo ut ut.
+  
+        Consequatur dolorum quod deleniti ut dolorum et dolor. Earum est consequatur asperiores. At dolor qui vel.
+  
+        Omnis dicta voluptatem omnis nostrum et. Beatae natus assumenda harum. Saepe nihil cumque facilis deleniti sit. Eum tenetur officiis voluptas. Vel quidem fuga sed esse. Maiores eum autem quibusdam tempore quia.
+  
+        Ducimus qui commodi delectus ab dolor. Voluptate enim quos perferendis rerum corrupti laudantium earum. A unde labore nulla corporis. Error sint vel a. Aut debitis placeat consequuntur voluptas. Sit quibusdam impedit doloremque assumenda.
+  
+        Omnis cumque maiores perspiciatis. Molestiae soluta vero assumenda assumenda consequuntur dicta. Enim eaque vitae iusto non officia numquam. Odit doloremque impedit ratione labore labore expedita ad.
+  
+        In modi error consectetur saepe. Ea eum voluptatem aut sed quos sunt. Vel voluptas optio doloribus at excepturi repudiandae. Illum voluptas quia ut. Ipsa minus consequatur molestiae quibusdam et.
+  
+        In quaerat dolor assumenda tenetur. Consequatur doloribus quo id distinctio laborum libero est. Et quas ut et maxime repellendus. Ratione nulla iste expedita explicabo voluptas tempora omnis quo. Itaque quaerat quisquam porro ex explicabo repellat. Accusamus et iure tenetur ut excepturi quo sit.
+  
+        Sed repudiandae pariatur id aut delectus consequuntur et. Veritatis et est illum cupiditate. Doloribus dolor consectetur ea nesciunt.
+  
+        Nulla harum voluptatem repellat ut iusto iure. Deleniti qui suscipit quisquam ut et. Ab consectetur perspiciatis beatae et velit. Dolorem exercitationem vel dolorem at totam eos saepe. Rerum quo molestias ex ipsam autem qui ullam vitae.
+  
+      </p>
+    </div>
+  </details>
+  <script defer>
+    window.addEventListener('load', async () => {
+      new Glider(document.querySelector('.glider'), {
+        slidesToShow: 1,
+        slidesToScroll: 2,
+        scrollLock: true,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+          prev: '.glider-prev',
+          next: '.glider-next'
+        }
+      });
+    });
+  </script>
+  <style>
+    body {
+      min-height: 100vh; /* Footer nach unten drücken */
+      display: flex;
+      flex-direction: column;
+    }
+    /* a:link, a:visited, a:focus, a:hover, a:active */
+    
+    footer {
+      margin-top: auto;
+    }
+    .glider-contain {
+      width: 75%;
+      max-height: 40vh;
+      margin: 30px auto;
+    }
+    .card {
+      height: 300px !important;
+      background-color: red;
+      text-align: center;
+
+      /* vertical align */
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .btn {
+      /*border: none;*/
+    }
+    .forgot {
+      color: #f00;
+      /*background-color: #f00;*/
+    }
+    .remember {
+      color: #0f0;
+      /*background-color: #0f0;*/
+    }
+    .btn-wrapper {
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      bottom: 0;
+      flex-shrink: 0;
+      align-content: center;
+      margin: auto auto 0 auto;
+    }
+    .details-content {
+      overflow: scroll;
+      height: 40vh;
+      margin: 10px;
+      text-align: center;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+    }
+    details img {
+      height: auto;
+      width: 65%;
+    }
+  </style>
+</main>
+<footer class="btn-wrapper" id="">
+  <button type="button" id="btn" class="btn forgot disable" disabled="true">✖️ Vergessen</button>
+  <button type="button" id="btn" class="btn remember">✔️ Auswendig</button>
+</footer>
